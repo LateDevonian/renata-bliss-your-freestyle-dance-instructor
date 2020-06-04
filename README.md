@@ -1,0 +1,2 @@
+This is a repository to work with peevish on the software devlopment process. We will be working on a variation of toy robot. This robot will be called 'renata bliss, your freestyle dance instructor'.
+it will be most awesome.

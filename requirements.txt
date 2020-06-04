@@ -1,0 +1,86 @@
+Terrible dance instructor Simulator
+===================
+
+Description
+-----------
+
+- The application is a simulation of a terrible dance instructor moving on a square dance floortop,
+  of dimensions 5 disco squares x 5 disco squares.
+- There are no other obstructions on the dance floor surface.
+- The dance instructor is free to roam around the surface of the dance floor, but must be
+  prevented from falling to destruction. Any GROOVEment that would result in the
+  dance instructor falling from the dance floor must be prevented, however further valid
+  GROOVEment commands must still be allowed.
+
+Create an application that can read in commands of the following (textual) form:
+
+    STARTDANCE X,Y,F
+    GROOVE
+    LEFT
+    RIGHT
+    SAYTHEWORDS
+
+- STARTDANCE will put the terrible dance instructor on the dance floor in position X,Y and facing NORTH,
+  SOUTH, EAST or WEST.
+- The origin (0,0) can be considered to be the SOUTH WEST most corner.
+- The first valid command to the dance instructor is a STARTDANCE command, after that, any
+  sequence of commands may be issued, in any order, including another STARTDANCE
+  command. The application should discard all commands in the sequence until
+  a valid STARTDANCE command has been executed.
+- GROOVE will GROOVE the terrible dance instructor one dance square forward in the direction she is
+  currently facing.
+- LEFT and RIGHT will rotate the dance instructor 90 degrees in the specified direction
+  without changing the position of the dance instructor.
+- SAYTHEWORDS will announce the X,Y and F of the dance instructor. This can be in any form,
+  but standard output is sufficient.
+
+- A dance instructor that is not on the dance floor can choose the ignore the GROOVE, LEFT, RIGHT
+  and SAYTHEWORDS commands.
+- Input can be from a file, or from standard input, as the developer chooses.
+- Provide test data to exercise the application.
+- The application must be a command line application.
+
+Constraints
+-----------
+
+- The terrible dance instructor must not fall off the dance floor during GROOVEment. This also
+  includes the initial STARTDANCEment of the terrible dance instructor.
+- Any GROOVE that would cause the dance instructor to fall must be ignored.
+
+Example Input and Output
+------------------------
+
+### Example a
+
+    STARTDANCE 0,0,NORTH
+    GROOVE
+    SAYTHEWORDS
+
+Expected output:
+
+    0,1,NORTH
+
+### Example b
+
+    STARTDANCE 0,0,NORTH
+    LEFT
+    SAYTHEWORDS
+
+Expected output:
+
+    0,0,WEST
+
+### Example c
+
+    STARTDANCE 1,2,EAST
+    GROOVE
+    GROOVE
+    LEFT
+    GROOVE
+    SAYTHEWORDS
+
+Expected output
+
+    3,3,NORTH
+
+    
